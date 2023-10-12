@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserFollowerResponse {
    private int userId;
-   private String name;
+   private String firstName;
    private String lastName;
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public interface CommentMapper {
     @Mapping(source = "user.id",target = "userId")
     @Mapping(source = "post.id", target = "postId")
-    @Mapping(source = "user.name",target = "userName")
+    @Mapping(source = "user.firstName",target = "userFirstName")
     @Mapping(source = "user.lastName",target = "userLastName")
     CommentGetResponse commentToResponse(Comment comment);
     List<CommentGetResponse> commentsToResponses(List<Comment> comments);

@@ -25,7 +25,7 @@ public class PostImage {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "data",length = 1000)
+    @Column(name = "data",length = 100000)
     private byte[] data;
     @NotNull
     @ManyToOne

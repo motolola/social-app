@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -24,7 +25,7 @@ public class User {
 
     @NotNull
     @Column(name = "name")
-    private String name;
+    private String firstName;
 
     @NotNull
     @Column(name = "email")
@@ -38,6 +39,15 @@ public class User {
     @NotNull
     @Column(name = "password")
     private String password;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "dob")
+    private LocalDate dob;
+
+    @Column(name = "bio")
+    private String userBio;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     Set<Follow> following;

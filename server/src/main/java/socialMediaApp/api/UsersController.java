@@ -20,7 +20,9 @@ public class UsersController {
 
     @GetMapping("/getall")
     public ResponseEntity<List<UserResponse>> getAll(){
-        return new ResponseEntity<>(userService.getAll(),HttpStatus.OK);
+
+        List<UserResponse> users  = userService.getAll();
+        return new ResponseEntity<>(users,HttpStatus.OK);
     }
 
     @GetMapping("/getbyid/{id}")

@@ -12,8 +12,8 @@ import java.util.List;
 public interface FollowMapper {
      @Mapping(source = "following.id",target = "followingId")
      @Mapping(source = "user.id",target = "followerId")
-     @Mapping(target = "followingName",expression = "java(follow.getFollowing().getName() + \" \"+follow.getFollowing().getLastName())")
-     @Mapping(target = "followerName",expression = "java(follow.getUser().getName() + \" \"+follow.getUser().getLastName())")
+     @Mapping(target = "followingName",expression = "java(follow.getFollowing().getFirstName() + \" \"+follow.getFollowing().getLastName())")
+     @Mapping(target = "followerName",expression = "java(follow.getUser().getFirstName() + \" \"+follow.getUser().getLastName())")
      FollowResponse followToResponse(Follow follow);
 
 

@@ -42,7 +42,7 @@ public class AuthController {
               return new ResponseEntity<>(jwtUtil.generateToken(
                       loginRequest.getEmail(),
                       userRepository.findByEmail(loginRequest.getEmail()).getId(),
-                      userRepository.findByEmail(loginRequest.getEmail()).getName()+
+                      userRepository.findByEmail(loginRequest.getEmail()).getFirstName()+
                               " "+ userRepository.findByEmail(loginRequest.getEmail()).getLastName()
                         )
                       ,HttpStatus.OK
@@ -60,7 +60,7 @@ public class AuthController {
         }
        User user = new User();
        user.setEmail(registerRequest.getEmail());
-       user.setName(registerRequest.getName());
+       user.setFirstName(registerRequest.getFirstName());
        user.setLastName(registerRequest.getLastName());
        user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
        userRepository.save(user);
@@ -70,7 +70,7 @@ public class AuthController {
         return new ResponseEntity<>(jwtUtil.generateToken(
                 registerRequest.getEmail(),
                 userRepository.findByEmail(registerRequest.getEmail()).getId(),
-                registerRequest.getName() +" "+registerRequest.getLastName()
+                registerRequest.getFirstName() +" "+registerRequest.getLastName()
         )
                 ,HttpStatus.OK
         );

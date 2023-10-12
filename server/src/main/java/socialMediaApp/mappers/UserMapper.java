@@ -12,12 +12,12 @@ import java.util.List;
 public interface UserMapper {
 
     @Mapping(source = "user.id",target = "userId")
-    @Mapping(source = "user.name",target = "name")
+    @Mapping(source = "user.firstName",target = "firstName")
     @Mapping(source = "user.lastName",target = "lastName")
     UserFollowerResponse followToFollowerResponse(Follow follow);
     @Mapping(source = "following.id",target = "userId")
     @Mapping(source = "following.lastName",target = "lastName")
-    @Mapping(source = "following.name",target = "name")
+    @Mapping(source = "following.firstName",target = "firstName")
     UserFollowingResponse followToFollowingResponse(Follow follow);
     @Mapping(source = "followers",target = "followers")
     @Mapping(source = "following",target = "following")

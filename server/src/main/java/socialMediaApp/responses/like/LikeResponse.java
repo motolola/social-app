@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class LikeResponse {
     private int id;
     private int userId;
-    private String name;
+    private String firstName;
     private String lastName;
 }
