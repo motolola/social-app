@@ -48,7 +48,7 @@ public class AuthController {
                       ,HttpStatus.OK
               );
           }catch (Exception e){
-              return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+              return new ResponseEntity<>("Either email or passowrd is incorrect",HttpStatus.UNAUTHORIZED);
           }
     }
 

@@ -49,6 +49,19 @@ public class User {
     @Column(name = "bio")
     private String userBio;
 
+    @Column(name = "gender")
+    private String gender;
+
+    /**
+     * Escort Services
+     */
+    @Column(name = "blow_job")
+    private boolean blowJob;
+    @Column(name = "massage")
+    private boolean massage;
+    @Column(name = "threesome")
+    private boolean threesome;
+
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     Set<Follow> following;
     @OneToMany(mappedBy = "following",cascade = CascadeType.ALL)
